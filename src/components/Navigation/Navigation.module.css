@@ -1,0 +1,10 @@
+.link {
+  font-size: 16px;
+  color: #ad009f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:not(:last-child) {
+  margin-right: 15px;
+}
