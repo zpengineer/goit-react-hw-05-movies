@@ -1,5 +1,5 @@
 const axios = require('axios');
-const API_KEY = 'b8ac79d8f7dac57cb589d169a879527b';
+const API_KEY = 'c650d1c0c307d1ff6855b3a117a6cfa1';
 const BASE_URL = `https://api.themoviedb.org/3`;
 
 async function moviesApi(url = '', config = {}) {
