@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import * as moviesApi from '../../services/movies-api';
+import styles from './HomePage.module.css';
+
+import MoviesList from 'components/MoviesList';
+import MoviesListItem from 'components/MoviesList/MoviesListItem';
 
 export default function Homepage() {
   const [trending, setTrending] = useState([]);
@@ -11,16 +14,19 @@ export default function Homepage() {
 
   return (
     <div>
-      <h2>Home</h2>
+      <h2 className={styles.title}>Trending movies today</h2>
 
       {trending && (
-        <ul>
+        <MoviesList>
           {trending.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-            </li>
+            <MoviesListItem
+              key={movie.id}
+              title={movie.title}
+              id={movie.id}
+              img={movie.poster_path}
+            />
           ))}
-        </ul>
+        </MoviesList>
       )}
     </div>
   );

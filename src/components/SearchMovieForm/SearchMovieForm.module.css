@@ -1,0 +1,51 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.form {
+  position: relative;
+}
+
+.button {
+  height: 50px;
+  width: 50px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  border: none;
+  background-color: initial;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  cursor: pointer;
+  color: #7881a1;
+}
+
+.button:hover {
+  color: #00b9ae;
+}
+
+/* .label {
+    position: relative;
+    right: 0;
+    top: 0;
+} */
+
+.input {
+  width: 400px;
+  height: 32px;
+  padding: 10px;
+  font-size: 21px;
+  border: none;
+  outline: none;
+  color: rgba(249, 249, 249, 0.67);
+  background: #21242d;
+  border-radius: 5px;
+}
+
+.input::placeholder {
+  font: inherit;
+  font-size: 18px;
+}

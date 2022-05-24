@@ -1,10 +1,42 @@
 .link {
-  font-size: 16px;
-  color: #ad009f;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #f9f9f9;
   text-decoration: none;
   cursor: pointer;
+  padding-top: 28;
+  padding-bottom: 28px;
 }
 
 .link:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 50px;
+}
+
+.activeLink {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  color: #00b9ae;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.activeLink:not(:last-child) {
+  margin-right: 50px;
+}
+
+.activeLink::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #00b9ae;
 }

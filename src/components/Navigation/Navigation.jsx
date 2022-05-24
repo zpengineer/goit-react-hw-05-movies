@@ -1,19 +1,25 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
 
-let activeStyle = {
-  color: '#D636C9',
-};
-
-const setActive = ({ isActive }) => (isActive ? activeStyle : undefined);
+// const setActive = ({ isActive }) => (isActive ? activeStyle : undefined);
 
 const Navigation = () => (
   <nav className={styles.mainNav}>
-    <NavLink to="/" className={styles.link} style={setActive}>
+    <NavLink
+      to="/"
+      className={({ isActive }) =>
+        isActive ? ['active', styles.activeLink].join(' ') : styles.link
+      }
+    >
       Home
     </NavLink>
 
-    <NavLink to="/movies" className={styles.link} style={setActive}>
+    <NavLink
+      to="/movies"
+      className={({ isActive }) =>
+        isActive ? ['active', styles.activeLink].join(' ') : styles.link
+      }
+    >
       Movies
     </NavLink>
   </nav>
