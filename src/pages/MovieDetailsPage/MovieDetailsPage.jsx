@@ -19,11 +19,12 @@ const Reviews = lazy(() =>
 );
 
 export default function MovieDetailsPage() {
+  const location = useLocation();
   const [movie, setMovie] = useState(null);
   const [status, setStatus] = useState('idle');
+  const [url, setUrl] = useState(location?.state?.from);
   const { movieId } = useParams();
 
-  const location = useLocation();
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   const goBack = () => {
-    navigate(-1);
+    navigate(url);
   };
 
   return (

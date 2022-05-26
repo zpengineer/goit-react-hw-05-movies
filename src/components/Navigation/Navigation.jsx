@@ -1,28 +1,31 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Navigation.module.css';
 
-// const setActive = ({ isActive }) => (isActive ? activeStyle : undefined);
+const Navigation = () => {
+  const location = useLocation();
 
-const Navigation = () => (
-  <nav className={styles.mainNav}>
-    <NavLink
-      to="/"
-      className={({ isActive }) =>
-        isActive ? ['active', styles.activeLink].join(' ') : styles.link
-      }
-    >
-      Home
-    </NavLink>
+  return (
+    <nav className={styles.mainNav}>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? ['active', styles.activeLink].join(' ') : styles.link
+        }
+        state={{ from: location }}
+      >
+        Home
+      </NavLink>
 
-    <NavLink
-      to="/movies"
-      className={({ isActive }) =>
-        isActive ? ['active', styles.activeLink].join(' ') : styles.link
-      }
-    >
-      Movies
-    </NavLink>
-  </nav>
-);
+      <NavLink
+        to="/movies"
+        className={({ isActive }) =>
+          isActive ? ['active', styles.activeLink].join(' ') : styles.link
+        }
+      >
+        Movies
+      </NavLink>
+    </nav>
+  );
+};
 
 export default Navigation;

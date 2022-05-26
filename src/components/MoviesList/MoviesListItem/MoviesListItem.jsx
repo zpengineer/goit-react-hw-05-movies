@@ -4,7 +4,7 @@ import styles from './MoviesListItem.module.css';
 
 import noImage from '../../Img/no-image.png';
 
-const MoviesListItem = ({ id, title, img }) => {
+const MoviesListItem = ({ id, title, img, query }) => {
   const location = useLocation();
 
   return (
@@ -32,7 +32,7 @@ const MoviesListItem = ({ id, title, img }) => {
 MoviesListItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
+  img: PropTypes.string,
 };
 
 export default MoviesListItem;
